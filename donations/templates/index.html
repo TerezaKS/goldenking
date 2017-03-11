@@ -1,30 +1,17 @@
 {% extends '_base.html' %}
 
-{% load static %}
-
 {% block all %}
 
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">odeslat</button>
-    </form>
 
-    <h1>Charity</h1>
+        <p>
+Welcome to the Wedding page of Tyler and Honza!
+We are glad that you are planning to spend with us our special day.
+The wedding will take place in Prague, Czech republic.
+Please take a moment anc check all useful information about Prague - Accomodation, Transportation, Things to Do ...
+We hope that you will take the opportunity of coming to our wedding as chance to enjoy a nice Prague city break!
+There is much more to see in the Czech republic, so please don´t hesitate to contact us to learn more about what to do during your stay in the great country.
 
-    {% for fund in charity_funds %}
-        <h2>
-            {{ fund.name }}:
-            <b>{{ fund.total }}</b> CZK.
-        </h2>
-    {% endfor %}
-
-    <h1>Dary</h1>
-    {% for donation in donations %}
-        {{ donation.name }} dal {{ donation.amount }} CZK pro {{ donation.charity_fund.name }}
-        <br>
-    {% endfor %}
-
-    <img src="{% static 'goodjob.png' %}" />
+We look forward to seeing you in June!
+</p>
 
 {% endblock %}
